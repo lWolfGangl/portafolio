@@ -1,0 +1,435 @@
+*{
+    box-sizing:border-box;
+    font-family: sans-serif;
+    color:white;
+}
+body{
+    background-color:black;
+    transition:0.3s;
+}
+html {
+    scroll-behavior: smooth;
+}
+#boton{
+    opacity:0;
+}
+:root{
+--color:rgb(242, 255, 123);
+--negro:rgb(12, 12, 12);
+--altfoto:600px;
+}
+
+/*
+var(--verde)
+var(--negro)
+*/
+.switch{
+    width:80px;
+    height:40px;
+    border-radius: 20px;
+    background-color: rgb(85, 85, 85);
+    position:relative;
+    z-index:10;
+}
+span{
+    color:var(--color)
+}
+.flicker{
+    width:30px;
+    height:30px;
+    border-radius: 15px;
+    background-color:rgb(189, 189, 189);
+    box-shadow: inset 4px 4px 4px rgb(245, 245, 245),inset -4px -4px 4px rgb(122, 122, 122);
+    position:absolute;
+    top:5px;
+    left:5px;
+    transition: 0.3s;
+    z-index:3;
+}
+.light{
+    background-color:rgb(242, 255, 123);
+    color:black;
+}
+.light .portada-der{
+    background-color:rgb(242, 255, 123);
+    color:black;
+}
+.light .flicker{
+    transform:translateX(40px);
+    transition: 0.3s;
+}
+.moon{
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    background-color:rgb(85, 85, 85);
+    box-shadow: inset -4px -4px 0 0 rgb(187, 225, 230);
+    position: absolute;
+    top:10px;
+    left:10px;
+    z-index:2;
+}
+.sun{
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    background-color: white;
+    box-shadow: 0 0 1px rgb(253, 252, 241),0 0 3px rgb(253, 252, 241),0 0 3px rgb(204, 192, 63),
+    0 0 4px rgb(233, 214, 5),0 0 5px rgb(233, 214, 5),0 0 7px rgb(233, 214, 5),0 0 10px rgb(233, 214, 5);
+    position: absolute;
+    top:10px;
+    left:50px;
+    z-index:2;
+}
+.contenido{
+    max-width:1500px
+    box-s
+}
+.portada{
+    width:100%;
+    height:950px;
+    display:flex;
+}
+.portada a{
+    cursor:pointer;
+}
+.portada-izq{
+    width:50%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:20;
+    background-image: url(img/grayperfil.jpg);
+    background-position: center;
+    background-attachment: fixed;
+}
+.portada-izq img{
+    object-fit:cover;
+    width:100%;
+    height:var(--altfoto);
+    clip-path: polygon(50% 0, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
+}
+.filtro{
+    width:100%;
+    backdrop-filter: blur(10px);
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.portada-der{
+    width:50%;
+    height:100%;
+    background:var(--negro);
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+i{
+    color:var(--color);
+    font-size: 50px;
+    padding-right: 0.5em;
+}
+.portada-der h1,h2{
+    font-family: 'Play', sans-serif;
+}
+.portada-der h3{
+    font-family: 'Mukta', sans-serif;
+    font-weight:200;
+}
+.portada-der h1{
+    font-size:100px;
+    text-shadow:0 0 21px var(--color),
+    0 0 42px var(--color);
+    margin: 0px;
+    animation:parpadeo 5s infinite ease;
+}
+@keyframes parpadeo {
+    
+    0%,100% {
+        text-shadow:0 0 21px var(--color),
+        0 0 42px var(--color);
+    }
+    50%{
+        text-shadow:0 0 11px rgba(255, 255, 255, 0.466),
+        0 0 20px rgba(255, 255, 255, 0.452),
+        0 0 30px var(--color),
+        0 0 40px var(--color),
+        0 0 50px var(--color);
+    }
+  }
+.portada-der h2{
+    font-size:35px;
+}
+.foto{
+    width:500px;
+    height:var(--altfoto);
+}
+.menu{
+    width:100%;
+    background-color:transparent/*var(--negro)*/;
+    position: sticky;
+    top: 0;
+    font-size:20px;
+    z-index:20;
+    padding-bottom: 1em;
+}
+.menu::after{
+    content:"";
+    clear:both;
+    display:table;
+}
+.menu ul{
+    overflow:hidden;
+    margin:0px;
+    margin-top:1em;
+    margin-left:1em;
+    padding:0px;
+    list-style-type:none;
+}
+.menu li{
+    float:left;
+    margin-right: 2em;
+    /*border:1px solid white;*/
+}
+.menu li:nth-child(1){
+    margin-right:0.2em;
+}
+.menu li img{
+    width:45px;
+    padding:5px 0 0 0px;
+}
+.menu a{
+    font-family: 'Mukta', sans-serif;
+    font-weight: 200;
+    display:block;
+    padding:1em;
+    background-color:transparent;
+    color:var(--color);
+    padding:0.5em 0.1em 0.1em 0.1em;
+    text-decoration:none;
+    position:relative;
+    cursor:pointer;
+    text-shadow: 0 0 2px #000,0 0 4px #000,0 0 8px #000,0 0 12px #000;
+}
+.menu a::before{
+    content:'';
+    position:absolute;
+    width:0;
+    left:50%;
+    bottom:2px;
+    height:3px;
+    background:var(--color);
+    transition: 0.4s;
+}
+.menu a:hover:before{
+   width:100%; 
+   left:0;
+   background:white;
+}
+.menu a:hover{
+    color:white;
+    transition: 0.8s;
+}
+.technologies{
+    width:100%;
+    height:fit-content;
+    padding:2em;
+    background-color: var(--negro);
+}
+.techcontainer{
+    display: flex;
+    justify-content: space-between;
+}
+.techcontainer div{
+    width: 20%;
+    height:fit-content;
+    padding: 0 2em 0 2em;
+}
+.technologies img{
+    width:100%;
+    height:auto;
+    filter:grayscale(1);
+    transition: all .3s;
+}
+.technologies img:hover{
+    filter:none;
+    transform:rotate(5deg) scale(1.2);
+}
+.me{
+    display:flex;width:100%;justify-content: space-between;background:var(--negro);
+}
+.portfolio .portfolio-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.portfolio .portfolio-content div{
+    width:18%;
+    height: fit-content;
+    overflow: hidden;
+}
+.portfolio-content div a{
+    text-decoration: none;
+    text-align: center;
+}
+.portfolio-content div a h3{
+    font-family: 'Mukta', sans-serif;
+}
+.portfolio-content img{
+    width:100%;
+    transition: .3s;
+}
+.portfolio-content img:hover{
+    transform:scale(1.2);
+}
+.skills, .portfolio, .contact, .about-me, .hobbies{
+    width:100%;
+    height:fit-content;
+    padding:2em;
+    font-family: 'Play', sans-serif;
+}
+.skills h1,.technologies h1, .portfolio h1, .contact h1, .about-me h1,.hobbies h1{
+    font-family: 'Play', sans-serif;
+    margin:auto;
+    color:white;
+    width:fit-content;
+    margin-bottom: 1em;
+    position: relative;
+}
+.skills h1::before,.technologies h1::before, .portfolio h1::before, .contact h1::before, .about-me h1::before,.hobbies h1::before{
+    content: '';
+    position:absolute;
+    display:block;
+    background-color:var(--color);
+    bottom:-8px;
+    left:0px;
+    width:100%;
+    height:4px;
+}
+.skills p,.technologies p, .portfolio p, .contact p, .about-me p, .hobbies p{
+    font-family: 'Mukta', sans-serif;
+    color:white;
+    margin:0px;
+    text-align: center;
+    font-weight:200;
+    font-size:20px;
+}
+.about-me, .skills,.hobbies {
+    width:30%;
+    text-align:center;
+}
+.about-me h1, .skills h1,.hobbies h1 {
+    margin: auto;
+    margin-bottom: 1em;;
+}
+.portfolio{
+    background-color: var(--negro);
+}
+.contact{
+    background-color: var(--negro);
+}
+form{
+    max-width: 500px;
+    margin: auto;
+}
+form input[type='text'],form input[type='email'],textarea,label{
+    width:100%;
+    padding:5px 5px;
+    margin: 3px 0;
+    font-family: 'Mukta',sans-serif;
+    color: black;
+    font-size:20px;
+    resize: none;
+}
+form label{
+    color: white;
+}
+form button{
+    color:var(--color);
+    padding: 0.2em  1em;
+    width:fit-content;
+    display:block;
+    margin: auto;
+    border:3px solid var(--color);
+    background:transparent;
+    font-family: 'Mukta',sans-serif;
+    font-size:20px;
+    border-radius: 23px;
+    cursor:pointer;
+}
+.light form button{
+    border-color:black;
+    color:black;
+}
+.footer{
+    width:100%;
+    height:fit-content;
+    background:black;
+    text-align:center;
+    padding-bottom: 2em;
+}
+.light h1,.light h2,.light h3,.light p,.light a,.light ul,.light li,.light label{
+    color:black;
+    text-shadow: none;
+    box-shadow: none;
+}
+.light span, .light a i,.light li a{
+    color:black;
+    text-shadow: none;
+    box-shadow: none;
+}
+.light section > *,.light .technologies{
+    background-color:var(--color);
+}
+.light .technologies img{
+    filter:none;
+}
+.light .menu a:hover:before{
+    width:100%; 
+    left:0;
+    background:var(--negro);
+ }
+ .light  .menu a:hover{
+     color:var(--negro);
+     transition: 0.8s;
+ }
+ .light h1::before{
+    color:var(--negro);
+    background-color:var(--negro);
+ }
+ .light .menu img{
+     filter:brightness(-100%);
+ }
+@media screen and (max-width:1100px) {
+    .portada{
+        display: inline;
+    }
+    .portada-izq{
+        width:100%;
+    }
+    .portada-der{
+        width:100%;
+    }
+    .techcontainer{
+        flex-wrap: wrap;
+        justify-content:space-around;
+    }
+    .techcontainer div{
+        width: 40%;
+    }
+    .me{
+        display:inline-block;
+    }
+    .me div{
+        width:100%;
+    }
+    .portfolio-content{
+        flex-wrap: wrap;
+        justify-content:space-around;
+    }
+    .portfolio .portfolio-content div{
+        width:40%;
+    }
+}
