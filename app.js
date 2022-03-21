@@ -8,7 +8,6 @@ $form.addEventListener('submit',handleSubmit);
 function handleSubmit(event){
     event.preventDefault();
     const form=new FormData(this);
-    console.log(form.get('fname'));
-    $buttonMailto.setAttribute('href','mailto:AyrtonAranibar@hotmail.com?subject=nombre ${form.get("fname")} correo ${form.get("femail")} mensaje &$body=${form.get("fmessage")}');
+    $buttonMailto.setAttribute('href', `mailto:AyrtonAranibar@hotmail.com?subject=nombre: ${form.get('fname')}  correo: ${form.get('femail')}&body=${form.get('fmessage')}`)
     $buttonMailto.click();
 }
