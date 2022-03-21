@@ -143,8 +143,9 @@ i{
     text-shadow:0 0 21px var(--color),
     0 0 42px var(--color);
     margin: 0px;
-    animation:parpadeo 5s infinite ease;
+    /*animation:parpadeo 5s infinite ease;*/
 }
+/*
 @keyframes parpadeo {
     
     0%,100% {
@@ -159,6 +160,7 @@ i{
         0 0 50px var(--color);
     }
   }
+  */
 .portada-der h2{
     font-size:35px;
 }
