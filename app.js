@@ -10,4 +10,5 @@ function handleSubmit(event){
     const form=new FormData(this);
     $buttonMailto.setAttribute('href', `mailto:AyrtonAranibar@hotmail.com?subject=nombre: ${form.get('fname')}  correo: ${form.get('femail')}&body=${form.get('fmessage')}`)
     $buttonMailto.click();
+    alert("Se ha abierto su correo, por favor, envíelo");
 }
